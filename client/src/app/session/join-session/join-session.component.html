@@ -1,0 +1,13 @@
+<div id="join-session" fxLayoutAlign="center center" fxFill>
+  <form [formGroup]="joinSessionForm" fxLayout="column" (ngSubmit)="addUserToSession()" >
+    <div  fxLayout="column">
+      The session ID: {{sessionId}}
+      <mat-form-field>
+        <label>Enter username</label>
+        <input matInput formControlName="username" type="text">
+      </mat-form-field>
+      <button mat-raised-button type="submit"> Join session</button>
+    </div>
+  </form>
+
+</div>

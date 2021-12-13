@@ -1,0 +1,41 @@
+<div id="view-stories">
+  <div *ngIf="stories.length == 0" class="no-stories-container" fxLayout="column" fxLayoutAlign="center center">
+    <mat-card>
+      <mat-card-title>
+        <span>No Stories</span>
+      </mat-card-title>
+      <mat-card-actions>
+        <button mat-raised-button (click)="openAddStoryComponent()">Add Story</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+  <div *ngIf="stories.length > 0" class="stories-container">
+    <div fxLayout="row wrap" fxLayoutGap="20px" class="stories-container">
+      <div *ngFor="let story of stories; let i = index">
+        <div style="padding: 10px">
+          <mat-card>
+            <mat-card-title>
+              <span>Story Name {{story.storyName}}</span>
+            </mat-card-title>
+            <mat-card-content fxLayout="column" class="p-12">
+              <span>Story Description {{story.description}}</span>
+              <span>Total Votes on story {{story.voteCount}}</span>
+              <span>Voting on this story is {{story.status}}</span>
+            </mat-card-content>
+            <mat-card-actions>
+              <div class="story-action" fxLayout="row">
+                <button mat-raised-button (click)="openEditStoryComponent(story)">Edit Story</button>
+                <!-- Add voting component -->
+              </div>
+            </mat-card-actions>
+          </mat-card>
+
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <button mat-raised-button (click)="openAddStoryComponent()">Add Story</button>
+  </div>
+
+</div>

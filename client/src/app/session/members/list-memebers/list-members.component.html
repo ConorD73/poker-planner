@@ -1,0 +1,15 @@
+<div id="list-members" fxLayout="column" style="max-height: 100%; overflow-y:auto">
+  <div class="list-members-container" fxLayoutGap="10px" fxLayout="column" >
+    <h3>Members List of Session: {{sessionId}}</h3>
+    <div *ngFor="let member of members; let i = index" fxLayout="Column">
+      <mat-card>
+        <mat-card-content fxLayout="Column">
+          <span>Member Id: {{member.id}}</span>
+          <span> Member Name: {{member.name}}</span>
+          <span>Member Role: {{member.role}}</span>
+          <button mat-raised-button (click)="openSingleMemberComponent(member.id)">View this user</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

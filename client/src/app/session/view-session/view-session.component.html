@@ -1,0 +1,21 @@
+<div id="session" fxFill>
+  <div class="session-container" fxLayout="column" fxFlex="75">
+    <div class="session-heading" fxLayoutGap="30px" fxLayoutAlign="center center">
+      <span class="session-id"> Session Id: {{currentSession.sessionId}}</span>
+      <span class="session-name"> Session Name: {{currentSession.sessionName}}</span>
+    </div>
+    <div class="session-stories" fxLayoutAlign="center center" fxFlex>
+      <app-view-stories [sessionId]="currentSession.sessionId"></app-view-stories>
+    </div>
+    <div class="session-controls mat-card" style="width: 50%; padding: 15px" fxLayout="column"
+         fxLayoutAlign="start start">
+      <span>Sharable Link: {{joinLink}}</span>
+      <div class="session-controls-admin" *ngIf="isAdmin">
+        <button mat-raised-button (click)="openDestroySessionDialog()">Destroy Session</button>
+      </div>
+    </div>
+  </div>
+  <div class="session-members" fxLayoutAlign="end start" style="position: relative" fxFlex="25">
+    <app-list-members [sessionId]="currentSession.sessionId"></app-list-members>
+  </div>
+</div>

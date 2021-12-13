@@ -1,0 +1,27 @@
+<div id="create-session" fxLayoutAlign="center center" fxFill>
+  <div class="create-session-container">
+    <form [formGroup]="createSessionForm" (ngSubmit)="createNewSession()">
+
+      <mat-card>
+        <mat-card-header>
+          <span > Create a new poker session </span>
+        </mat-card-header>
+        <mat-card-content fxLayoutAlign="center center">
+          <div fxLayout="column">
+            <mat-form-field appearance="outline">
+              <mat-label> Session Name</mat-label>
+              <input matInput type="text" formControlName="sessionName"/>
+            </mat-form-field>
+            <mat-form-field class="p-4" appearance="outline">
+              <mat-label> Choose(User story, epics) </mat-label>
+              <input matInput formControlName="deck" >
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="center center">
+          <button mat-raised-button type="button" (click)="createNewSession()"> Create Session</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+</div>
